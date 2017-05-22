@@ -77,12 +77,14 @@ Middleware will look for this file extension. Default value is `.coffee`
 ### ignore (*array*)
 A list of paths to ignore because they're not CoffeeScript, for example:
 
-    app.use coffee(
-      src: 'src'
-      dest: 'static'
-      compilerOpts: bare: true
-      ignore: ['/lib/jquery.js', '/lib/marked.js']
-    )
+```coffee
+app.use coffee(
+  src: 'src'
+  dest: 'static'
+  compilerOpts: bare: true
+  ignore: ['/lib/jquery.js', '/lib/marked.js']
+)
+```
 
 
 ## Screenshot
