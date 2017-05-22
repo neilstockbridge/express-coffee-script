@@ -30,13 +30,14 @@ middleware = (options = {}) ->
   options.compilerOpts ?= {}
   options.force ?= false
   options.ext ?= '.coffee'
+  options.ignore ?= []
 
   (req, res, next) ->
     return next() if req.method != 'GET' and req.method != 'HEAD'
 
     { pathname } = url.parse(req.url)
 
-    return next() if not regexJs.test(pathname)
+    return next() if not regexJs.test(pathname) or pathname in options.ignore
 
     pathnameCs = pathname.replace(regexJs, options.ext)
 

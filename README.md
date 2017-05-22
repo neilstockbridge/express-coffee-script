@@ -74,6 +74,17 @@ This object will be passed to the compile function.
 ### ext (*string*)
 Middleware will look for this file extension. Default value is `.coffee`
 
+### ignore (*array*)
+A list of paths to ignore because they're not CoffeeScript, for example:
+
+    app.use coffee(
+      src: 'src'
+      dest: 'static'
+      compilerOpts: bare: true
+      ignore: ['/lib/jquery.js', '/lib/marked.js']
+    )
+
+
 ## Screenshot
 
 ![Screenshot](extras/screenshot.jpg)
